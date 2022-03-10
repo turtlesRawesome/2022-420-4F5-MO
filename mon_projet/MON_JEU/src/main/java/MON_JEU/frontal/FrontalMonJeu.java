@@ -9,6 +9,7 @@ import ca.ntro.app.services.Window;
 import static ca.ntro.app.tasks.frontend.FrontendTasks.*;
 
 import MON_JEU.frontal.taches.Initialisation;
+import MON_JEU.frontal.vues.VueFileAttente;
 import MON_JEU.frontal.vues.VueRacine;
 
 public class FrontalMonJeu implements FrontendFx{
@@ -35,6 +36,7 @@ public class FrontalMonJeu implements FrontendFx{
 	public void registerViews(ViewRegistrarFx registrar) {
 		// TODO Auto-generated method stub
 		registrar.registerView(VueRacine.class, "/racine.xml");
+		registrar.registerView(VueFileAttente.class, "/file_attente.xml");
 		
 		//Langue par défaut
 		registrar.registerDefaultResources("/chaines_fr.properties");

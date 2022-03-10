@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 
 <StackPane xmlns:fx="http://javafx.com/fxml"
-	fx:controller="MON_JEU.frontal.vues.VueRacine">
+	fx:controller="MON_JEU.frontal.vues.VueRacine"
+	styleClass="conteneur"
+	id="vue-racine">
+	<Label text="un label"/>
 	<Button
-		text="un bouton">
+		text="%allerFileAttente">
 	</Button>
 </StackPane>

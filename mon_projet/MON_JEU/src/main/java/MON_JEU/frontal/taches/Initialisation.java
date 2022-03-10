@@ -2,6 +2,7 @@ package MON_JEU.frontal.taches;
 
 import static ca.ntro.app.tasks.frontend.FrontendTasks.*;
 
+import MON_JEU.frontal.vues.VueFileAttente;
 import MON_JEU.frontal.vues.VueRacine;
 import ca.ntro.app.frontend.ViewLoader;
 import ca.ntro.app.services.Window;
@@ -13,6 +14,9 @@ public class Initialisation {
 		
 		creerVueRacine(tasks);
 		installerVueRacine(tasks);
+		
+		creerVueFileAttente(tasks);
+		installerVueFileAttente(tasks);
 	}
 	private static void afficherFenetre(FrontendTasks tasks) {
 		tasks.task("afficherFenetre")
@@ -43,5 +47,29 @@ public class Initialisation {
 				window.installRootView(vueRacine);
 				
 			});
+	}
+	private static void creerVueFileAttente(FrontendTasks tasks) {
+		tasks.task(create(VueFileAttente.class))
+			.waitsFor(viewLoader(VueFileAttente.class))
+			.thenExecutesAndReturnsValue(inputs -> {
+				
+				ViewLoader<VueFileAttente> viewLoader = inputs.get(viewLoader(VueFileAttente.class));
+				VueFileAttente vueFileAttente = viewLoader.createView();
+				
+				return vueFileAttente;
+				
+			});
+	}
+	private static void installerVueFileAttente(FrontendTasks tasks) {
+		tasks.task("installerVueFileAttente")
+		.waitsFor(created(VueRacine.class))
+		.waitsFor(created(VueFileAttente.class))
+		.thenExecutes(inputs -> {
+			
+			VueRacine vueRacine = inputs.get(created(VueRacine.class));
+			VueFileAttente vueFileAttente = inputs.get(created(VueFileAttente.class));
+			
+			vueRacine.afficherSousVue(vueFileAttente);
+		});
 	}
 }
