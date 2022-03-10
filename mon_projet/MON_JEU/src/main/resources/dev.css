@@ -1,9 +1,27 @@
 .conteneur {
-	-fx-border-width:10;
+	-fx-border-width: 10;
 }
 #vue-racine {
-	-fx-border-color:darkred;
+	-fx-border-color: darkred;
+	-fx-alignement: center;
 }
 #vue-file-attente {
-	-fx-border-color:darkblue;
+	-fx-border-color: darkblue;
+	-fx-alignement: center;
+}
+#vue-partie {
+	-fx-border-color: darkgreen;
+	-fx-alignement: center;
+}
+
+.gros-bouton {
+	-fx-font-size: 1.2em
+}
+
+.gros-bouton:pressed {
+	-fx-font-size: 1em;
+}
+
+.gros-bouton:hover {
+	-fx-cursor: hand;
 }

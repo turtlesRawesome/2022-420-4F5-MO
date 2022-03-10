@@ -10,13 +10,21 @@ import ca.ntro.app.tasks.frontend.FrontendTasks;
 
 public class Initialisation {
 	public static void creerTaches(FrontendTasks tasks) {
-		afficherFenetre(tasks);
 		
-		creerVueRacine(tasks);
-		installerVueRacine(tasks);
+		tasks.taskGroup("initialisation")
 		
-		creerVueFileAttente(tasks);
-		installerVueFileAttente(tasks);
+		.contains(subTasks -> {
+			
+			afficherFenetre(subTasks);
+		
+			creerVueRacine(subTasks);
+			installerVueRacine(subTasks);
+			
+			creerVueFileAttente(subTasks);
+			installerVueFileAttente(subTasks);
+			
+		});
+		
 	}
 	private static void afficherFenetre(FrontendTasks tasks) {
 		tasks.task("afficherFenetre")

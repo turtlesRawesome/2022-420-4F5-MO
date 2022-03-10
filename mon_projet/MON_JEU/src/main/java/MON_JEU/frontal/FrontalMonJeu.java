@@ -8,8 +8,12 @@ import ca.ntro.app.tasks.frontend.FrontendTasks;
 import ca.ntro.app.services.Window;
 import static ca.ntro.app.tasks.frontend.FrontendTasks.*;
 
+import MON_JEU.frontal.evenements.EvtAfficherFileAttente;
+import MON_JEU.frontal.evenements.EvtAfficherPartie;
 import MON_JEU.frontal.taches.Initialisation;
+import MON_JEU.frontal.taches.Navigation;
 import MON_JEU.frontal.vues.VueFileAttente;
+import MON_JEU.frontal.vues.VuePartie;
 import MON_JEU.frontal.vues.VueRacine;
 
 public class FrontalMonJeu implements FrontendFx{
@@ -18,6 +22,7 @@ public class FrontalMonJeu implements FrontendFx{
 	public void createTasks(FrontendTasks tasks) {
 		// TODO Auto-generated method stub
 		Initialisation.creerTaches(tasks);
+		Navigation.creerTaches(tasks);
 	}
 
 	@Override
@@ -29,14 +34,16 @@ public class FrontalMonJeu implements FrontendFx{
 	@Override
 	public void registerEvents(EventRegistrar registrar) {
 		// TODO Auto-generated method stub
-		
+		registrar.registerEvent(EvtAfficherFileAttente.class);
+		registrar.registerEvent(EvtAfficherPartie.class);
 	}
 
 	@Override
 	public void registerViews(ViewRegistrarFx registrar) {
-		// TODO Auto-generated method stub
+		// Vues
 		registrar.registerView(VueRacine.class, "/racine.xml");
 		registrar.registerView(VueFileAttente.class, "/file_attente.xml");
+		registrar.registerView(VuePartie.class, "/partie.xml");
 		
 		//Langue par défaut
 		registrar.registerDefaultResources("/chaines_fr.properties");
