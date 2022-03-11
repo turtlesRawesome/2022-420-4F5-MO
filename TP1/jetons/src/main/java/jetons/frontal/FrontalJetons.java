@@ -16,21 +16,18 @@ import jetons.frontal.vues.VueJetons;
 public class FrontalJetons implements FrontendFx{
 
 	@Override
-	public void createTasks(FrontendTasks tasks) {
-		// TODO Auto-generated method stub
-		Initialisation.creerTaches(tasks);
+	public void createTasks(FrontendTasks tasks) {		
+		Initialisation.creerTaches(tasks);		
 		Navigation.creerTaches(tasks);
 	}
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void registerEvents(EventRegistrar registrar) {
-		// TODO Auto-generated method stub
+	public void registerEvents(EventRegistrar registrar) {		
 		registrar.registerEvent(EvtAfficherFileAttente.class);
 		registrar.registerEvent(EvtAfficherJetons.class);
 	}

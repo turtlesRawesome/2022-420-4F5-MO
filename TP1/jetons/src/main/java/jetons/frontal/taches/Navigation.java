@@ -21,15 +21,12 @@ public class Navigation {
 				afficherVueJetons(subTasks);
 				
 				creerVueFileAttente(subTasks);
-				afficherVueFileAttente(subTasks);
-								
+				afficherVueFileAttente(subTasks);								
 			});
 	}
 	private static void afficherVueJetons(FrontendTasks tasks) {
 		tasks.task("afficherVueJetons")
-
-		.waitsFor(event(EvtAfficherJetons.class))
-		
+		.waitsFor(event(EvtAfficherJetons.class))		
 		.thenExecutes(inputs -> {
 			
 			VueRacine vueRacine = inputs.get(created(VueRacine.class));
@@ -39,8 +36,7 @@ public class Navigation {
 		});
 	}
 	
-	public static void creerVueFileAttente(FrontendTasks tasks) {
-		
+	public static void creerVueFileAttente(FrontendTasks tasks) {		
 		tasks.task(create(VueFileAttente.class))
 			.waitsFor(viewLoader(VueFileAttente.class))
 			.thenExecutesAndReturnsValue(inputs -> {
@@ -49,27 +45,20 @@ public class Navigation {
 				
 				VueFileAttente vueFilleAttente = viewLoader.createView();
 				
-				return vueFilleAttente;
-				
-				
+				return vueFilleAttente;				
 			});
 	}
 	
-	private static void afficherVueFileAttente(FrontendTasks tasks) {
-		
-		tasks.task("afficherVueFileAttente")
-		
-			.waitsFor(created(VueFileAttente.class))
-			
-			.waitsFor(event(EvtAfficherFileAttente.class))
-			
+	private static void afficherVueFileAttente(FrontendTasks tasks) {		
+		tasks.task("afficherVueFileAttente")		
+			.waitsFor(created(VueFileAttente.class))			
+			.waitsFor(event(EvtAfficherFileAttente.class))			
 			.thenExecutes(inputs -> {
 				
 				VueRacine vueRacine = inputs.get(created(VueRacine.class));
 				VueFileAttente vueFilleAttente = inputs.get(created(VueFileAttente.class));
 				
-				vueRacine.afficherSousVue(vueFilleAttente);
-				
+				vueRacine.afficherSousVue(vueFilleAttente);				
 			});
 		
 	}

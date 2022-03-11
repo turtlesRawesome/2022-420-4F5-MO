@@ -17,15 +17,12 @@ public class VueFileAttente extends ViewFx {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		Ntro.assertNotNull("boutonOuvrirJetons", boutonOuvrirJetons);
+		//Ntro.assertNotNull("boutonOuvrirJetons", boutonOuvrirJetons);
 		
 		installerEvtAfficherJetons();
-		
 	}
 	
-	private void installerEvtAfficherJetons() {
-		
+	private void installerEvtAfficherJetons() {		
 		EvtAfficherJetons evtNtro = NtroApp.newEvent(EvtAfficherJetons.class);
 		
 		boutonOuvrirJetons.setOnAction(evtFx -> {
@@ -33,7 +30,6 @@ public class VueFileAttente extends ViewFx {
 			System.out.println("[VueFileAttente] clic:" + evtFx.getEventType());
 			
 			evtNtro.trigger();
-			
 		});
 		
 	}

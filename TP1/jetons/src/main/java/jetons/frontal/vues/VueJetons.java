@@ -17,21 +17,18 @@ public class VueJetons extends ViewFx{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		Ntro.assertNotNull("boutonAllerFileAttente", boutonAllerFileAttente);
+		//Ntro.assertNotNull("boutonAllerFileAttente", boutonAllerFileAttente);
 		installerEvtAfficherFileAttente();
 	}
 	
 	private void installerEvtAfficherFileAttente() {
-		
 		EvtAfficherFileAttente evtNtro = NtroApp.newEvent(EvtAfficherFileAttente.class);
 		
 		boutonAllerFileAttente.setOnAction(evtFx -> {
 			
 			System.out.println("[VueJetons] clic: " + evtFx.getEventType());
 			
-			evtNtro.trigger();
-			
+			evtNtro.trigger();			
 		});
 		
 	}

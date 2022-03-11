@@ -7,18 +7,4 @@
 	fx:controller="jetons.frontal.vues.VueRacine"
 	styleClass="conteneur"
 	id="vue-racine">
-<!-- 
-	<Label text="un label"/>
-	<Button
-		text="%allerFileAttente">
-	</Button>
-	<Button
-		fx:id="boutonAllerFileAttente"
-		text="%allerFileAttente"
-		styleClass="gros-bouton"
-		id="boutonAllerFileAttente">
-	</Button>
-
--->
-
 </StackPane>
