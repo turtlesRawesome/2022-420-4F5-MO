@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import ca.ntro.app.models.Model;
+import jetons.messages.MsgAjouterSacAJetons;
 import jetons.modeles.valeurs.SacAJetons;
 
 public class ModeleJetons implements Model {
@@ -41,5 +42,11 @@ public class ModeleJetons implements Model {
 	public void initialiser() {
 		Date maintenant = new Date();
 		hordotageOuverture = maintenant.getTime();
+	}
+	
+	public void ajouterSacAJetons(MsgAjouterSacAJetons msg) {
+		
+		
+		
 	}
 }

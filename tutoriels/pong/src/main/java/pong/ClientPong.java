@@ -1,41 +1,41 @@
-package jetons;
+package pong;
 
-import jetons.dorsal.DorsalJetons;
-import jetons.frontal.FrontalJetons;
-import jetons.messages.MsgAjouterSacAJetons;
-import jetons.modeles.ModeleJetons;
-import jetons.modeles.valeurs.SacAJetons;
 import ca.ntro.app.NtroClientFx;
 import ca.ntro.app.backend.BackendRegistrar;
 import ca.ntro.app.frontend.FrontendRegistrarFx;
 import ca.ntro.app.messages.MessageRegistrar;
 import ca.ntro.app.models.ModelRegistrar;
+import pong.frontal.FrontalPong;
 
-public class ClientJetons implements NtroClientFx {
+public class ClientPong implements NtroClientFx{
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		NtroClientFx.launch(args);
 	}
 
 	@Override
 	public void registerBackend(BackendRegistrar registrar) {
-		registrar.registerBackend(new DorsalJetons());		
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void registerFrontend(FrontendRegistrarFx registrar) {
-		registrar.registerFrontend(new FrontalJetons());
+		// TODO Auto-generated method stub
+		registrar.registerFrontend(new FrontalPong());
 	}
 
 	@Override
 	public void registerMessages(MessageRegistrar registrar) {
-		registrar.registerMessage(MsgAjouterSacAJetons.class);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void registerModels(ModelRegistrar registrar) {
-		registrar.registerModel(ModeleJetons.class);
-		registrar.registerValue(SacAJetons.class);		
+		// TODO Auto-generated method stub
+		
 	}
 
 }

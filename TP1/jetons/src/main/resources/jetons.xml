@@ -16,10 +16,19 @@
 	</ImageView>
 
 	<Button
+		fx:id="boutonAjouterSacAJetons"
+		text="%ajouterSacAJetons"
+		styleClass="gros-bouton"
+		id="boutonAjouterSacAJetons">
+	</Button>
+
+	<Button
 		fx:id="boutonAllerFileAttente"
 		text="%allerFileAttente"
 		styleClass="gros-bouton"
 		id="boutonAllerFileAttente">
 	</Button>
+	
+	
 	
 </VBox>
